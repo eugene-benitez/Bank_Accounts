@@ -1,0 +1,58 @@
+﻿@using Bank_Accounts.Models
+@model User
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Register</title>
+    <link rel="stylesheet" href="~/css/style.css"/>
+</head>
+<body>
+    <div class="wrapper">
+        <div>
+            <h1>Registration<span style="float:right; margin-right: 12px;"><a href="login">Login</a></span></h1>
+            <br>
+        </div>
+        <div style="display:inline-block; width: 600px; position:relative">
+            <form action="submit" method="post">
+                <div class="form-group" style="position:relative; text-align: left">
+                    <span asp-validation-for="FirstName"></span>
+                    <label asp-for="FirstName"></label>
+                    <br>
+                    <input asp-for="FirstName">
+                    <br><br>
+
+                    <span asp-validation-for="LastName"></span>
+                    <label asp-for="LastName"></label>
+                    <br>
+                    <input asp-for="LastName">
+                    <br><br>
+
+                    <span asp-validation-for="Email"></span>
+                    <label asp-for="Email"></label>
+                    <br>
+                    <input asp-for="Email">
+                    <br><br>
+                    <div style="display:inline-block; position: absolute; top:0; right:0">
+                        <span asp-validation-for="Password"></span>
+                        <label asp-for="Password"></label>
+                        <br>
+                        <input asp-for="Password">
+                        <br><br>
+
+                        <span asp-validation-for="Confirm"></span>
+                        <label asp-for="Confirm"></label>
+                        <br>
+                        <input asp-for="Confirm">
+                        <br>
+                    </div>
+                </div>
+                <input type="submit" value="Sign Up Now">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

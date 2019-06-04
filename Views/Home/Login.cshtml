@@ -1,0 +1,33 @@
+@using Bank_Accounts.Models
+@model User
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+</head>
+<body>
+    <div>
+        <div>
+            <h1>Login<span style="float:right; margin-right: 12px;"><a href="/">Register</a></span></h1>
+            <br>
+        </div>
+        <form action="log" method="post">
+                    <span asp-validation-for="Email"></span>
+                    <label asp-for="Email"></label>
+                    <br>
+                    <input asp-for="Email">
+                    <br><br>
+                    <span asp-validation-for="Password"></span>
+                    <label asp-for="Password"></label>
+                    <br>
+                    <input asp-for="Password">
+                    <br><br>
+                <input type="submit" value="Log in">
+        </form>
+    </div>
+</body>
+</html>

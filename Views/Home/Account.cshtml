@@ -1,0 +1,39 @@
+@using Bank_Accounts.Models
+@model Transactions
+<div>
+<h1>Welcome, @ViewBag.User.FirstName</h1>
+<br>
+<h2>Current Balance: @ViewBag.User.Balance</h2>
+<br>
+    <h2>
+        <form asp-action = "Use" asp-controller="home" method="post">
+            <div class="form-group">
+                    <span asp-validation-for="Amount"></span>
+                    <p>Deposit/Withdraw:</p>
+                    <label asp-for="Amount"></label>
+                    <input asp-for="Amount">
+                    <br>
+
+                    <input type="hidden" name="UserId" value="@ViewBag.Id">
+                </div>
+            <input type="submit" value="Submit!">
+        </form>
+    </h2>
+    <br>
+    <h4>
+    <table class="table table-dark">
+        <tr>
+            <th>Amount</th>
+            <th>Date</th>
+        </tr>
+                    @for (int i = @ViewBag.transactions.Count-1; i >= 0; i--)
+            {
+        <tr class ="col">
+            <td scope = "row">@ViewBag.transactions[i].Amount</td>
+                        <td scope = "row">@ViewBag.transactions[i].CreatedAt
+            </td>
+            </tr>
+        }
+    </table>
+    </h4>
+</div>
